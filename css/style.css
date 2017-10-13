@@ -1,0 +1,121 @@
+html {
+	font-family: Arial, Tahoma, sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+a {
+	background-color:transparent;
+}
+a:active,a:hover{
+	outline:0;
+}
+h1{
+	font-size:2em;
+	margin:.67em 0;
+}
+
+
+body{
+  font: 1em/1.6em sans-serif;
+  color: #353535;
+}
+a {text-decoration: none;
+}
+ul {
+	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*Внешний вид меню*/
+.side {
+	width: 200px;
+
+	margin: 40px;
+}
+
+
+.menu a {
+	background: rgba(170, 238, 255, 0.84);
+	color: #fff;
+	padding: 10px;
+	display: block;
+	border-bottom: 1px solid #b4b4b4;
+	transition: 0.5s all;
+
+}
+.menu a:hover {
+	background: rgba(144, 229, 174, 0.85);
+	padding: 10px 0 10px 20px;
+}
+
+.menu li:first-child a,
+.menu li .menu__drop li:first-child a {
+border-radius: 3px 3px 0 0;
+
+}
+.menu li:last-child a,
+.menu li .menu__drop li:last-child a {
+border-radius: 0 0 3px 3px ;
+border-bottom: 0;
+
+}
+
+.menu li .menu__drop li {
+	border-radius: 0;
+	border-bottom: 1px solid #666;
+}
+/*Всплывющие меню*/
+
+.menu__list {
+	position: relative;
+}
+
+.menu__drop{
+	position: absolute;
+	width: 100%;
+	left: 100%;
+	top: -9999em;
+	opacity: 0;
+	transition: 0.5s opacity;
+	border-left: 10px solid transparent
+}
+
+.menu__list:hover .menu__drop {
+	opacity: 1;
+	top: 0;
+}
+
+
+
+/*Иконки для всплывающих меню*/
+
+.menu__list::after{
+	content: "  ";
+	position: absolute;
+	border: 5px solid;
+	border-color: transparent transparent transparent #eee;
+	top: 1em;
+	right: 0.7em;
+	transition: 0.5s;
+}
+
+
+.menu__list:hover::after {
+-webkit-transform: scaleX(-1);
+-ms-transform: scaleX(-1);
+transform: scaleX(-1);
+
+}
+body {
+	background-color: rgba(209, 142, 10, 0.37);
+}
+.container {
+	font: 20px Arial,Tahoma, sans-serif;
+	color: #ffffff;
+	width: 850px;
+	margin: 40px;
+
+}
+
