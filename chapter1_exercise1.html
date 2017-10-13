@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hi WebGL!</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Глава1. Пример 1</h1>
+<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+<!-- фрагментный шейдер -->
+<script id="shader-fs" type="x-shader/x-fragment">
+  void main(void) {
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+  }
+</script>
+<!-- вершинный шейдер -->
+<script id="shader-vs" type="x-shader/x-vertex">
+  attribute vec3 aVertexPosition;
+  void main(void) {
+    gl_Position = vec4(aVertexPosition, 1.0);
+  }
+</script>
+<script src="chapter1_exercise1_function_initShaders.js"></script>
+<script src="chapter1_exercise1_function_getShader.js"></script>
+<script src="chapter1_exercise1_function_initBuffers.js"></script>
+<script src="chapter1_exercise1_function_draw.js"></script>
+</body>
+</html>
