@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D in WebGL!</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Разноцветный куб, вращающийся вокруг своей оси</h1>
+<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+<!-- фрагментный шейдер -->
+<script id="shader-fs" type="x-shader/x-fragment">
+varying highp vec4 vColor;
+  void main(void) {
+    gl_FragColor = vColor;
+  }
+</script>
+<!-- вершинный шейдер -->
+<script id="shader-vs" type="x-shader/x-vertex">
+  attribute vec3 aVertexPosition;
+  attribute vec3 aVertexColor;
+  varying highp vec4 vColor;
+   uniform mat4 uMVMatrix;
+  uniform mat4 uPMatrix;
+  void main(void) {
+     gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+
+    vColor = vec4(aVertexColor, 1.0);
+  }
+</script>
+<script  type="text/javascript" src="/CGG-Sharapov/js/gl-matrix-min.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_animFrame.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_draw.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_getShader.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_initBuffers.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_initShaders.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_setupWebGL.js"></script>
+<script src="/CGG-Sharapov/js/chapter5_individualExercise_function_window.onload.js"></script>
+
+</body>
+</html>
